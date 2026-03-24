@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beyond the Lemon Grove — Kenny Abramowitz</title>
+  <meta name="description" content="Beyond the Lemon Grove: The Geographic Eviction of the American Film Industry — narrative nonfiction grounded in primary documents." />
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --panel:#11131a;
+      --text:#f2f3f5;
+      --muted:#b7bcc7;
+      --line:#23283a;
+      --accent:#d7b46a;
+      --max:980px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:linear-gradient(180deg, #07080b 0%, var(--bg) 40%, #07080b 100%);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 0 22px; border-bottom:1px solid var(--line);
+    }
+    .brand{font-weight:650; letter-spacing:.2px}
+    nav a{margin-left:14px; color:var(--muted); text-decoration:none}
+    nav a:hover{color:var(--text)}
+    .hero{
+      display:grid; grid-template-columns: 1.05fr .95fr; gap:22px;
+      padding:28px 0 18px;
+    }
+    @media (max-width: 860px){ .hero{grid-template-columns:1fr} }
+    .card{
+      background:rgba(17,19,26,.72);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      backdrop-filter: blur(6px);
+    }
+    .kicker{color:var(--accent); font-weight:650; letter-spacing:.12em; text-transform:uppercase; font-size:.78rem}
+    h1{margin:.35rem 0 .25rem; font-size:2.05rem; line-height:1.12}
+    .sub{color:var(--muted); margin:0 0 14px; font-size:1.02rem}
+    blockquote{
+      margin:14px 0 0;
+      padding:14px 14px;
+      border-left:3px solid var(--accent);
+      background:rgba(0,0,0,.18);
+      border-radius:10px;
+      color:var(--text);
+    }
+    blockquote p{margin:0}
+    .meta{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top:14px; color:var(--muted); font-size:.95rem;
+    }
+    .pill{
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:7px 10px;
+      background:rgba(0,0,0,.18);
+    }
+    .actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .btn{
+      display:inline-block;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+      text-decoration:none;
+      color:var(--text);
+      font-weight:600;
+    }
+    .btn.primary{
+      border-color:rgba(215,180,106,.55);
+      background:rgba(215,180,106,.12);
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .node{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(215,180,106,.35);
+      background:rgba(215,180,106,.08);
+      color:var(--text);
+      font-weight:650;
+      text-decoration:none;
+    }
+    .node .tag{
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:rgba(215,180,106,.95);
+      border:1px solid rgba(215,180,106,.35);
+      padding:4px 8px;
+      border-radius:999px;
+      background:rgba(0,0,0,.18);
+    }
+    .ph{
+      width:100%;
+      border-radius:12px;
+      border:1px dashed rgba(215,180,106,.55);
+      background:rgba(215,180,106,.08);
+      color:rgba(215,180,106,.9);
+      display:flex; align-items:center; justify-content:center;
+      min-height:420px;
+      font-weight:650;
+      letter-spacing:.04em;
+      text-align:center;
+      padding:14px;
+    }
+    .grid{
+      display:grid; grid-template-columns: 1fr 1fr; gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 860px){ .grid{grid-template-columns:1fr} }
+    h2{margin:0 0 10px; font-size:1.25rem}
+    p{margin:0 0 10px; color:var(--text)}
+    .muted{color:var(--muted)}
+    .section{margin-top:18px}
+    .rule{height:1px; background:var(--line); margin:16px 0}
+    footer{
+      margin-top:34px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.92rem;
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between;
+    }
+    .small-links a{color:var(--muted); text-decoration:none; margin-left:12px}
+    .small-links a:hover{color:var(--text)}
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+      overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Kenny Abramowitz</div>
+      <nav aria-label="Primary">
+        <a href="#book">Book</a>
+        <a href="#materials">Materials</a>
+        <a href="#author">Author</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="book" class="hero">
+      <section class="card">
+        <div class="kicker">Narrative nonfiction</div>
+        <h1>Beyond the Lemon Grove</h1>
+        <p class="sub">The Geographic Eviction of the American Film Industry</p>
+
+        <div class="meta" aria-label="Book details">
+          <div class="pill"><strong>Length:</strong> ~90,000 words</div>
+          <div class="pill"><strong>Evidence:</strong> Primary documents cited per chapter</div>
+          <div class="pill"><strong>Method:</strong> On-site and archival reconstruction</div>
+        </div>
+
+        <blockquote>
+          <p>Hollywood was not discovered. It was occupied.</p>
+        </blockquote>
+
+        <div class="section">
+          <h2>Short description</h2>
+          <p>
+            <em>Beyond the Lemon Grove</em> examines how American film production consolidated permanently in Hollywood—not as myth, not as destiny, but as the outcome of a specific geographic and political configuration.
+          </p>
+          <p>
+            Built from primary records and long-term archival study, the book treats Hollywood as a closed system whose formation can be reconstructed from documents that predate the industry itself.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>What this book does</h2>
+          <p>
+            This is not a nostalgia project. It is a sourced reconstruction. The narrative form is deliberate, but every claim in the manuscript is anchored to primary documents cited at the end of each chapter. This book reconstructs a documented record that has not been assembled before.
+          </p>
+        </div>
+
+        <div class="rule" aria-hidden="true"></div>
+
+        <div id="materials" class="actions" aria-label="Materials">
+          <a class="node" href="QUERY_PRIVATE_PLACEHOLDER.pdf" aria-label="Query (private access placeholder)">
+            <span class="tag">Private</span>
+            <span>Query</span>
+          </a>
+          <a class="node" href="SYNOPSIS_PRIVATE_PLACEHOLDER.pdf" aria-label="Synopsis (private access placeholder)">
+            <span class="tag">Private</span>
+            <span>Synopsis</span>
+          </a>
+           </a>
+          <a class="node" href="SYNOPSIS_PRIVATE_PLACEHOLDER.pdf" aria-label="Sample Chapters (private access placeholder)">
+            <span class="tag">Private</span>
+            <span>Sample Chapters</span>
+          </a>
+        </div>
+
+        <p class="muted" style="margin-top:12px;">
+          Private files are for agents, managers, and publishers.
+        </p>
+      </section>
+
+      <aside class="card" aria-label="Primary image">
+        <div class="ph">
+          PRIMARY IMAGE PLACEHOLDER<br />
+          
+        </div>
+        <p class="muted" style="margin-top:12px;">
+          (e.g., “Reference frame”).
+        </p>
+      </aside>
+    </main>
+
+    <section id="author" class="grid">
+      <div class="card">
+        <h2>Author</h2>
+        <p>
+          Kenny Abramowitz holds an MFA in Screenwriting from the AFI Conservatory and an MLIS, with four years of professional experience as a California public librarian specializing in collection development.
+        </p>
+        <p>
+          His undergraduate training in motion picture technology included early and silent film history under Charles Harpole, editor of the <em>History of the American Cinema</em> series.
+        </p>
+        <p>
+          Eleven years of primary-source research—combining on-site study with archival work in Los Angeles collections and the AFI library—produced the record this book assembles.
+        </p>
+      </div>
+
+      <div class="card" aria-label="Author image">
+        <div class="ph" style="min-height:320px;">
+          AUTHOR IMAGE PLACEHOLDER<br />
+          (Neutral)
+        </div>
+        <p class="muted" style="margin-top:12px;">
+          If used: 
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="card section">
+      <h2>Contact</h2>
+      <p class="muted">Materials available upon request. Professional inquiries only.</p>
+      <p>
+        <strong>Email:</strong> <span class="muted">EMAIL_PLACEHOLDER</span><br />
+        <strong>Representation:</strong> <span class="muted">AGENT (optional)</span>
+      </p>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Kenny Abramowitz 🍋</div>
+      <div class="small-links" aria-label="Footer links">
+        <a href="#book">Top</a>
+        <a href="#materials">Materials</a>
+        <a href="#author">Author</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
