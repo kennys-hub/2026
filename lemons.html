@@ -87,24 +87,31 @@
       border-radius:12px;
       border:1px dashed rgba(215,180,106,.55);
       background:rgba(215,180,106,.08);
-      display:flex; align-items:center; justify-content:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
       min-height:260px;
-      font-weight:650;
-      text-align:center;
       margin-bottom:12px;
       overflow:hidden;
     }
     .ph img{
       width:100%;
-      height:100%;
-      object-fit:cover;
+      height:auto;
+      object-fit:contain;
       display:block;
-      border-radius:12px;
-      border:1px solid rgba(215,180,106,.35);
       cursor:zoom-in;
     }
+    .caption{
+      width:100%;
+      padding:8px 10px;
+      font-size:.85rem;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      background:rgba(0,0,0,.25);
+    }
 
-    /* Lightbox */
+    /* Lightbox fits image, not viewport */
     .lightbox{
       position:fixed;
       inset:0;
@@ -113,14 +120,28 @@
       align-items:center;
       justify-content:center;
       z-index:9999;
-      padding:18px;
+      padding:24px;
+    }
+    .lightbox figure{
+      margin:0;
+      max-width:95%;
+      max-height:95%;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
     }
     .lightbox img{
-      max-width:92%;
-      max-height:92%;
+      max-width:100%;
+      max-height:100%;
       border-radius:12px;
       border:1px solid rgba(215,180,106,.35);
       cursor:zoom-out;
+    }
+    .lightbox figcaption{
+      margin-top:10px;
+      font-size:.9rem;
+      color:var(--muted);
+      text-align:center;
     }
 
     footer{
@@ -166,7 +187,7 @@
     </blockquote>
 
     <p>
-      <em>Beyond the Lemon Grove: The Geographic Eviction of the American Film Industry</em> is narrative nonfiction, approximately 90,000 words. The book traces a documented causal chain from an 1894 federal survey — measuring the Hollywood‑Colegrove corridor as a flat, zero‑percent‑grade alluvial plain at 356 feet above sea level — to the 1949 contract that removed four letters from a sign above the basin, transforming a territorial boundary marker into a global abstract icon.
+      <strong>Beyond the Lemon Grove</strong> is narrative nonfiction built entirely from primary documents — a forensic geographic and economic audit that places the reader on the ground in 1894 when the surveyor measures the floor, in 1911 when the industry occupies it, in 1923 when the sign rises above it, and in 1949 when four letters are removed and the mechanism disappears.
     </p>
 
     <p>
@@ -193,22 +214,27 @@
   <aside class="card">
     <div class="ph">
       <img src="lemonc1.png" alt="Cover image" />
+      <div class="caption">Caption placeholder</div>
     </div>
 
     <div class="ph">
       <img src="1894survey.png" alt="1894 USGS survey excerpt" />
+      <div class="caption">Caption placeholder</div>
     </div>
 
     <div class="ph">
-      <img src="edendale9am.png" alt="Edendale shadow comparison 9am" />
+      <img src="edendale9am.png" alt="Edendale shadow comparison" />
+      <div class="caption">Caption placeholder</div>
     </div>
 
     <div class="ph">
       <img src="shadowtax.png" alt="Shadow Tax diagram" />
+      <div class="caption">Caption placeholder</div>
     </div>
 
     <div class="ph">
       <img src="hollywoodland1923.png" alt="Hollywoodland sign 1923" />
+      <div class="caption">Caption placeholder</div>
     </div>
   </aside>
 </main>
@@ -238,17 +264,22 @@
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" aria-hidden="true">
-  <img src="" alt="">
+  <figure>
+    <img src="" alt="">
+    <figcaption>Caption placeholder</figcaption>
+  </figure>
 </div>
 
 <script>
   (function(){
     const lb = document.getElementById('lightbox');
     const lbImg = lb.querySelector('img');
+    const lbCap = lb.querySelector('figcaption');
 
-    function openLightbox(src, alt){
-      lbImg.src = src;
-      lbImg.alt = alt || '';
+    function openLightbox(img){
+      lbImg.src = img.src;
+      lbImg.alt = img.alt || '';
+      lbCap.textContent = img.nextElementSibling?.textContent || '';
       lb.style.display = 'flex';
       lb.setAttribute('aria-hidden','false');
     }
@@ -257,16 +288,15 @@
       lb.style.display = 'none';
       lb.setAttribute('aria-hidden','true');
       lbImg.src = '';
-      lbImg.alt = '';
+      lbCap.textContent = '';
     }
 
     document.querySelectorAll('.ph img').forEach(img=>{
-      img.addEventListener('click', ()=> openLightbox(img.src, img.alt));
+      img.addEventListener('click', ()=> openLightbox(img));
     });
 
     lb.addEventListener('click', closeLightbox);
-
-    document.addEventListener('keydown', (e)=>{
+    document.addEventListener('keydown', e=>{
       if(e.key === 'Escape') closeLightbox();
     });
   })();
