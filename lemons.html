@@ -1,3 +1,6 @@
+Here—**full, drop‑in HTML** with every change you specified: new thesis blockquote, replaced paragraphs, updated pills, updated discovery line, added Harpole line, **two more image placeholders**, **images fit the boxes**, and **click‑to‑enlarge lightbox** while keeping your existing format.
+
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Beyond the Lemon Grove — Kenny Abramowitz</title>
   <meta name="description" content="Beyond the Lemon Grove: The Geographic Eviction of the American Film Industry — narrative nonfiction grounded in primary documents." />
+
   <style>
     :root{
       --bg:#0b0c10;
@@ -79,6 +83,8 @@
       padding:4px 8px;
       border-radius:999px;
     }
+
+    /* Image boxes */
     .ph{
       width:100%;
       border-radius:12px;
@@ -89,7 +95,37 @@
       font-weight:650;
       text-align:center;
       margin-bottom:12px;
+      overflow:hidden;
     }
+    .ph img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      border-radius:12px;
+      border:1px solid rgba(215,180,106,.35);
+      cursor:zoom-in;
+    }
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.85);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding:18px;
+    }
+    .lightbox img{
+      max-width:92%;
+      max-height:92%;
+      border-radius:12px;
+      border:1px solid rgba(215,180,106,.35);
+      cursor:zoom-out;
+    }
+
     footer{
       margin-top:34px;
       padding-top:18px;
@@ -115,56 +151,78 @@
 </header>
 
 <main id="book" class="hero">
-<section class="card">
-  <div class="kicker">Narrative nonfiction</div>
-  <h1>Beyond the Lemon Grove</h1>
-  <p class="sub">The Geographic Eviction of the American Film Industry</p>
-  <p class="status">First draft complete. Currently seeking representation.</p>
+  <section class="card">
+    <div class="kicker">Narrative nonfiction</div>
+    <h1>Beyond the Lemon Grove</h1>
+    <p class="sub">The Geographic Eviction of the American Film Industry</p>
+    <p class="status">First draft complete. Currently seeking representation.</p>
 
-  <div class="meta">
-    <div class="pill">Why this coordinate. Not chance.</div>
-    <div class="pill">Primary documents cited per chapter.</div>
-    <div class="pill">On‑site and archival reconstruction.</div>
-  </div>
+    <div class="meta">
+      <div class="pill">Why this coordinate and not another.</div>
+      <div class="pill">Primary sources cited per chapter.</div>
+      <div class="pill">Eleven verified original discoveries.</div>
+      <div class="pill">The sign is not a dream. It is a boundary.</div>
+    </div>
 
-  <blockquote>
-    Hollywood was not discovered. It was occupied — in the 1,367‑day gap between a water deal and a water delivery — by an industry that moved into a bankrupt temperance town’s devalued roadhouse for thirty dollars a month and never left.
-  </blockquote>
+    <blockquote>
+      The floor is not a crop. The floor is a function. Hollywood was not discovered, chosen, or predestined. It was occupied — in the 1,367‑day gap between a water deal and a water delivery — by an industry that moved into a bankrupt temperance town’s devalued roadhouse for thirty dollars a month and never left. Film didn’t create the floor. The floor selected film — once — and never let go.
+    </blockquote>
 
-  <p>
-    <em>Beyond the Lemon Grove: The Geographic Eviction of the American Film Industry</em> is narrative nonfiction, approximately 90,000 words. All scenes, characters, dates, and dialogue are sourced to primary documents cited at the end of each chapter.
-  </p>
-
-  <p>
-    For the first time in the literature, the book identifies the precise geographic mechanism — derived from an 1894 federal survey that the film industry never read — that made this specific coordinate, and no other, the permanent industrial home of the American cinema.
-  </p>
-
-  <p>
-    <i>The manuscript documents eleven verified discoveries derived from primary sources — including a quantifiable daily production penalty derived from an 1894 federal survey that no prior film history has identified.</i>
-  </p>
-
-  <div id="materials">
-    <a class="node" href="#"><span class="tag">Private</span>Proposal</a>
-    <a class="node" href="#"><span class="tag">Private</span>Synopsis</a>
-    <a class="node" href="#"><span class="tag">Private</span>Sample pages</a>
-    <p style="color:var(--muted); margin-top:10px;"> <br>
-      Private files are for agents, managers, and publishers.
+    <p>
+      <em>Beyond the Lemon Grove: The Geographic Eviction of the American Film Industry</em> is narrative nonfiction, approximately 90,000 words. The book traces a documented causal chain from an 1894 federal survey — measuring the Hollywood‑Colegrove corridor as a flat, zero‑percent‑grade alluvial plain at 356 feet above sea level — to the 1949 contract that removed four letters from a sign above the basin, transforming a territorial boundary marker into a global abstract icon.
     </p>
-  </div>
-</section>
 
-<aside class="card">
-  <div class="ph"><img src="lemonc1.png" alt="Cover image" style="width:100%; border-radius:12px; border:1px solid rgba(215,180,106,.35);"/>
-</div>
-  <div class="ph"><img src="1894survey.png" alt="Cover image" style="width:100%; border-radius:12px; border:1px solid rgba(215,180,106,.35);"/></div>
-  <div class="ph"><img src="edendale9am.png" alt="Cover image" style="width:100%; border-radius:12px; border:1px solid rgba(215,180,106,.35);"/></div>
-</aside>
+    <p>
+      The standard explanation for Hollywood’s emergence — sunshine, cheap land, flight from the Edison Trust — explains why the industry moved west. It does not explain why it landed on a specific coordinate and stayed. The decisive factor was terrain. Early one‑reel chase films thrived in the canyons of Edendale. Feature‑length filmmaking could not. The flat Hollywood floor made a new cinematic grammar possible, and once capital recognized that fact it escalated rapidly and locked in place. The floor always becomes whatever the ridge doesn’t want — but can’t function without. This book names the mechanism for the first time.
+    </p>
+
+    <p>
+      <i>
+        The manuscript documents eleven verified discoveries derived from primary sources — including a quantifiable daily production penalty derived from an 1894 federal survey, a 1,367‑day sovereignty gap that left the floor legally undefended, and the forensic proof that the Hollywoodland sign was erected above an already‑locked industrial basin, not above a dream.
+      </i>
+    </p>
+
+    <div id="materials">
+      <a class="node" href="#"><span class="tag">Private</span>Proposal</a>
+      <a class="node" href="#"><span class="tag">Private</span>Synopsis</a>
+      <a class="node" href="#"><span class="tag">Private</span>Sample pages</a>
+      <p style="color:var(--muted); margin-top:10px;">
+        <br>
+        Private files are for agents, managers, and publishers.
+      </p>
+    </div>
+  </section>
+
+  <aside class="card">
+    <div class="ph">
+      <img src="lemonc1.png" alt="Cover image" />
+    </div>
+
+    <div class="ph">
+      <img src="1894survey.png" alt="1894 USGS survey excerpt" />
+    </div>
+
+    <div class="ph">
+      <img src="edendale9am.png" alt="Edendale shadow comparison 9am" />
+    </div>
+
+    <div class="ph">
+      <img src="shadowtax.png" alt="Shadow Tax diagram" />
+    </div>
+
+    <div class="ph">
+      <img src="hollywoodland1923.png" alt="Hollywoodland sign 1923" />
+    </div>
+  </aside>
 </main>
 
 <section id="author" class="card">
   <h2>Author</h2>
   <p>
     Kenny Abramowitz holds an MFA in Screenwriting from the AFI Conservatory and an MLIS, with four years of professional experience as a California public librarian specializing in collection development.
+  </p>
+  <p>
+    His undergraduate training in motion picture technology included early and silent film history under Charles Harpole, editor of the <em>History of the American Cinema</em> series.
   </p>
   <div class="ph" style="min-height:220px;">AUTHOR PHOTO</div>
 </section>
@@ -180,5 +238,45 @@
 </footer>
 
 </div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <img src="" alt="">
+</div>
+
+<script>
+  (function(){
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+
+    function openLightbox(src, alt){
+      lbImg.src = src;
+      lbImg.alt = alt || '';
+      lb.style.display = 'flex';
+      lb.setAttribute('aria-hidden','false');
+    }
+
+    function closeLightbox(){
+      lb.style.display = 'none';
+      lb.setAttribute('aria-hidden','true');
+      lbImg.src = '';
+      lbImg.alt = '';
+    }
+
+    document.querySelectorAll('.ph img').forEach(img=>{
+      img.addEventListener('click', ()=> openLightbox(img.src, img.alt));
+    });
+
+    lb.addEventListener('click', closeLightbox);
+
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape') closeLightbox();
+    });
+  })();
+</script>
+
 </body>
 </html>
+```
+
+If you want one more refinement: I can make the lightbox support **left/right arrow** to cycle through the five images—same clean style, no layout changes.
