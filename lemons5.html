@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beyond the Lemon Grove — Kenny Abramowitz</title>
+  <meta name="description" content="Beyond the Lemon Grove: The Geographic Eviction of the American Film Industry — narrative nonfiction by Kenny Abramowitz." />
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --panel:#11131a;
+      --text:#f2f3f5;
+      --muted:#b7bcc7;
+      --line:#23283a;
+      --accent:#d7b46a; /* Gold */
+      --edendale:#ff4d4d; /* Red for Edendale/Trap */
+      --hwood:#4da6ff; /* Blue for Hollywood/Sanctuary */
+      --max:980px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:linear-gradient(180deg, #07080b 0%, var(--bg) 40%, #07080b 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 0 22px; border-bottom:1px solid var(--line);
+    }
+    .brand{font-weight:650}
+    nav a{margin-left:18px; color:var(--muted); text-decoration:none; font-size:.95rem}
+    nav a:hover{color:var(--text)}
+
+    /* HERO — cover left, survey right */
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:24px;
+      padding:32px 0 24px;
+    }
+    @media(max-width:780px){.hero{grid-template-columns:1fr}}
+
+    .card{
+      background:rgba(17,19,26,.72);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+    }
+
+    .kicker{
+      color:var(--accent);
+      font-weight:650;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:.78rem;
+      margin-bottom:6px;
+    }
+    h1{margin:.3rem 0 .2rem; font-size:2.1rem; line-height:1.15}
+    h2{margin:.3rem 0 .8rem; font-size:1.35rem}
+    .sub{color:var(--muted); margin:0 0 18px; font-size:1.05rem}
+    .status{color:var(--accent); font-size:.88rem; margin-bottom:20px}
+
+    blockquote{
+      margin:20px 0;
+      padding:16px 18px;
+      border-left:3px solid var(--accent);
+      background:rgba(0,0,0,.22);
+      font-style:italic;
+      color:var(--text);
+    }
+    blockquote strong{font-style:normal; color:var(--accent)}
+
+    /* image boxes */
+    .imgbox{
+      width:100%;
+      border-radius:12px;
+      border:1px solid rgba(215,180,106,.35);
+      background:rgba(215,180,106,.06);
+      overflow:hidden;
+      margin-bottom:16px;
+      cursor:zoom-in;
+    }
+    .imgbox img{
+      width:100%; height:auto; display:block;
+    }
+    .caption{
+      padding:10px 14px;
+      font-size:.85rem;
+      color:var(--muted);
+      line-height:1.5;
+      border-top:1px solid var(--line);
+      background:rgba(0,0,0,.25);
+      cursor:default;
+    }
+    .caption strong.hwood { color: var(--hwood); font-weight: 600; }
+    .caption strong.edendale { color: var(--edendale); font-weight: 600; }
+
+    /* two-col evidence grid */
+    .grid2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    @media(max-width:620px){.grid2{grid-template-columns:1fr}}
+
+    /* the spine — text left, evidence right */
+    .two{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      margin-bottom:24px;
+    }
+    @media(max-width:780px){.two{grid-template-columns:1fr}}
+
+    .meta-line{
+      margin-top:18px;
+      font-size:.9rem;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      padding-top:14px;
+    }
+
+    .contact-block p{margin:.4rem 0}
+
+    footer{
+      margin-top:40px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:.88rem;
+      display:flex; justify-content:space-between;
+    }
+
+    /* Lightbox */
+    .lb{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.88);
+      display:none; align-items:center; justify-content:center;
+      z-index:9999; padding:24px;
+    }
+    .lb figure{margin:0; max-width:92%; max-height:92%; display:flex; flex-direction:column; align-items:center;}
+    .lb img{max-width:100%; max-height:85vh; border-radius:10px; border:1px solid rgba(215,180,106,.3); cursor:zoom-out;}
+    .lb figcaption{margin-top:10px; font-size:.88rem; color:var(--muted); text-align:center; max-width:620px;}
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header>
+  <div class="brand">Kenny Abramowitz</div>
+  <nav>
+    <a href="#book">Book</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#author">Author</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="book" class="hero">
+  <div class="card">
+    <div class="kicker">Narrative Nonfiction · In Progress</div>
+    <h1>Beyond the Lemon Grove</h1>
+    <p class="sub">The Geographic Eviction of the American Film Industry</p>
+    <p class="status">Manuscript in progress · Proposal complete · Seeking representation</p>
+
+    <div class="imgbox" style="cursor:default; margin-bottom:24px;">
+      <img src="lemonc1.png" alt="Beyond the Lemon Grove — book cover" />
+    </div>
+
+    <blockquote>
+      The floor is not a crop. The floor is a function.<br><br>
+      Hollywood was not discovered, chosen, or predestined. It was occupied — in the 1,367-day gap between a water deal and a water delivery — by an industry that moved into a bankrupt temperance town's devalued roadhouse for thirty dollars a month and never left. Film didn't create the floor. The floor selected film — once — and never let go.
+    </blockquote>
+
+    <p class="meta-line">
+      Narrative nonfiction · ~90,000 words · Eleven verified discoveries derived from primary sources, cited per chapter · Proposal, synopsis, and sample pages available upon request.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="kicker">Primary Source · 1894</div>
+    <h2>The Document Nobody Read</h2>
+    <p style="color:var(--muted); margin-bottom:16px;">
+      In 1894 the United States Geological Survey filed the Los Angeles Quadrangle — documenting the Hollywood-Colegrove corridor as a flat, zero-percent-grade alluvial plain at 356 feet above sea level. In the same year, real estate agents were selling the same ground as lemon land. Neither document knew the other existed.
+    </p>
+    <p style="color:var(--muted); margin-bottom:16px;">
+      The survey encoded a measurable daily production penalty on every studio built in the Edendale canyon — a penalty derived directly from the contour lines the surveyor drew. Nobody in the film industry read the survey. Nobody in the film history literature asked what the terrain actually cost to work on.
+    </p>
+    <p style="color:var(--muted); margin-bottom:20px;">
+      This book reads it for the first time.
+    </p>
+
+    <div class="imgbox">
+      <img src="1894survey.png" alt="1894 USGS Los Angeles Quadrangle" />
+      <div class="caption">
+        1894 U.S. Geological Survey, Los Angeles Quadrangle (scale 1:62,500, filed May 19 1897).
+        Hollywood-Colegrove corridor: 356-foot spot elevation, zero contour lines, zero percent grade.
+        Edendale canyon, three miles east: 734-foot ridgeline, 8-percent cross-slope, dense contour clustering.
+        Both terrains documented on the same federal map — seventeen years before the first studio opened on the flat floor.
+        Available at ngmdb.usgs.gov/topoview.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="two">
+  <div class="card">
+    <div class="kicker">The Argument</div>
+    <h2>What the Standard History Misses</h2>
+
+    <p>
+      The standard explanation for Hollywood's emergence has three parts — sunshine, cheap land, and flight from Edison's patent enforcers. All three are true. None is sufficient.
+    </p>
+    <p>
+      They explain why the industry came west. They do not explain why it landed on a specific coordinate at Sunset Boulevard and Gower Street and stayed permanently. They do not explain why Edendale, three miles east, which had climate and cheap land in equal measure, became a capital trap the industry had to escape. They treat terrain as a flat commodity — acreage to be counted, not geometry to be measured.
+    </p>
+    <p>
+      The terrain was not flat. It was two radically different systems on the same federal map.
+    </p>
+    <p>
+      The canyon at Edendale imposed a quantifiable daily loss of usable shooting light — derived directly from the 8-percent cross-slope the 1894 survey documented. That penalty, 88.3 minutes per shooting day, compounded into 43 lost shooting days per year — a 17.3 percent budget penalty on every production. The canyon also imposed a geometric limit on camera retreat: the same cross-slope that taxed the light made the deep-focus compositions of the Feature Film era physically impossible.
+    </p>
+    <p>
+      The Hollywood floor imposed neither penalty. Shadow Tax: zero. Excavation penalty: zero. Camera retreat: unlimited. D.W. Griffith's 160-foot Babylon wall for <em>Intolerance</em> required a 300-foot flat camera retreat. On Edendale's 8-percent cross-slope that retreat produces a 24-foot elevation change — geometrically incoherent. On the Hollywood floor it is a straight roll across level ground.
+    </p>
+    <p>
+      The terrain did not merely host the transition from one-reel chase films to feature-length cinema. It forced it.
+    </p>
+    <p>
+      The book reconstructs the full causal chain: the 1894 survey that documented the floor before the industry existed; the 1904 dry vote that accidentally created the distressed asset the industry would lease for thirty dollars a month; the 1910 annexation that dissolved Hollywood's governance and opened the 1,367-day sovereignty gap the industry occupied; the five capital anchors between 1911 and 1926 that made departure structurally irrational; and the 1923 convergence — Zone E below, the Hollywoodland sign above, racial covenants enforcing the vertical line — when the mechanism became myth. In 1949 the Hollywood Chamber of Commerce contracted to remove the letters LAND from the sign. The territorial boundary marker became a global abstract icon. The metadata was overwritten. The mechanism was hidden.
+    </p>
+    <p>
+      <strong style="color:var(--accent)">This book names it.</strong>
+    </p>
+  </div>
+
+  <div>
+    <div class="card" style="margin-bottom:16px;">
+      <div class="kicker">The Spine</div>
+      <p style="margin:0 0 10px; font-size:.95rem; color:var(--muted);">Entry → Lock → Escalation → Climax → Erasure</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1894</span> — USGS survey documents the floor. Nobody reads it.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1904</span> — Dry vote kills the Blondeau Tavern. Zombie asset created.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1910</span> — Annexation. Sovereignty gap: 1,367 days.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1911</span> — Christie opens Nestor at the Blondeau Tavern. $30/month. Boggs dies on the canyon floor the same morning.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1913</span> — DeMille signs. Water arrives. System self-reinforcing.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1916</span> — Council: $15,000,000 industry too important to remove. Point of no return.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1921</span> — The Scandal Peak. Wallace Reid and Arbuckle scandals threaten the 'Clean Hollywood' myth.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1922</span> — The Moral Auditor. Will Hays hired to sanitize 'Babylon' and protect the production floor.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1923</span> — Hollywoodland sign. Zone E below. Zone A above. The mechanism becomes myth.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1934</span> — The Code. Censorship becomes industrial law, erasing the 'dirty' history of the 1911 occupation.</p>
+      <p style="margin:6px 0; font-size:.9rem;"><span style="color:var(--accent)">1949</span> — LAND removed. The mechanism disappears from the name.</p>
+    </div>
+
+    <div class="card">
+      <div class="kicker">The Moral Irony Argument</div>
+      <p style="font-size:.9rem; color:var(--muted); margin-bottom:10px;">
+        <strong style="color:var(--text)">The Hypocrisy of the High Ground.</strong> Hollywood's identity is a double-lie. It was founded as a Temperance utopia that accidentally subsidized the birth of "Babylon" through its own exclusionary dry laws (killing the Blondeau Tavern and creating the distressed asset Nestor occupied for $30/month). The Hays Code was not just a censorship tool; it was a branding exercise to reconcile the "Moral Floor" of 1904 with the "Industrial Reality" of the 1920s sin-machine. The town that voted to kill a tavern had to hire a czar to hide the fact that they had built an empire on top of it.
+      </p>
+    </div>
+  </div>
+</div>
+
+<section id="evidence" class="card" style="margin-bottom:24px;">
+  <div class="kicker">Primary Sources &amp; Modern Verification</div>
+  <h2>The Evidence</h2>
+  <p style="color:var(--muted); margin-bottom:22px;">
+    Every scene, date, and figure in the manuscript is sourced to a primary document cited at the end of each chapter.
+    The sequence below establishes terrain first, then compares its operational consequence in light.
+  </p>
+
+  <div class="imgbox" style="margin-bottom:28px;">
+    <img src="map1894both.jpg" alt="1894 USGS audit — Edendale Shadow Tax and Hollywood 356 Sanctuary" style="width:100%; height:auto;" />
+    <div class="caption">
+      This <strong>1894 USGS audit</strong> reveals the industrial motive for the flight to Hollywood.
+      While the <strong class="edendale">Edendale Canyons</strong> (Red) were choked by ridgelines that imposed an <strong>88-minute morning Shadow Tax</strong>, the Hollywood plain (Green) offered a <strong class="hwood">356-foot alluvial sanctuary</strong>. This zero-grade floor provided the geometric and solar clearance required to build a global industry, proving that Hollywood didn't just win on "weather"—it won on <strong>Topographic Geometry</strong>.
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <div class="imgbox">
+        <img src="edendalesennet1915.png" alt="Edendale studio site with rising terrain, c. 1915" />
+        <div class="caption">
+          Edendale studio site, c. 1915.
+          Production buildings sit in immediate proximity to rising terrain.
+          The photograph establishes terrain presence only.
+          It does not attempt to quantify light loss.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="imgbox">
+        <img src="labasin1886.png" alt="Los Angeles basin, 1886 — continuous flat ground plane" />
+        <div class="caption">
+          Los Angeles basin, 1886.
+          The ground plane extends uninterrupted from foreground to horizon.
+          No ridgelines intrude into the working space.
+          This flat continuity defines the Hollywood production floor.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="imgbox">
+        <img src="edendale9am.png" alt="Shadowmap simulation — Edendale" />
+        <div class="caption">
+          Shadowmap solar geometry simulation, March 15 2026 (shadowmap.org).
+          Allesandro Street, Edendale — site of early production.
+          Terrain obstruction cuts morning light by approximately 44 minutes.
+          <em>Post‑1959 freeway grading makes the modern canyon shallower than the original; figures here are minimums.</em>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="imgbox">
+        <img src="hwood9am.png" alt="Shadowmap simulation — Hollywood" />
+        <div class="caption">
+          Shadowmap solar geometry simulation, March 15 2026 (shadowmap.org).
+          Sunset and Gower, Hollywood — site of the Nestor Film Company, 1911.
+          No terrain obstruction.
+          Full unobstructed shooting day from sunrise to astronomical sunset.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="author" class="card" style="margin-bottom:24px;">
+  <div class="kicker">Author</div>
+  <h2>Kenny Abramowitz</h2>
+  <p>
+    Kenny Abramowitz holds an MFA in Screenwriting from the AFI Conservatory and an MLIS, with four years of professional experience as a California public librarian specializing in collection development. His undergraduate training in motion picture technology included early and silent film history under Charles Harpole, editor of the <em>History of the American Cinema</em> series.
+  </p>
+  <p>
+    Eleven years of primary-source research — combining on-site study with archival work in Los Angeles collections and the AFI library — produced the documented causal chain this book presents. The combination of narrative training from the American Film Institute and archival methodology from the MLIS is the dual lens the argument required. No single discipline was positioned to cross all three archives — film history, urban history, and historical geography — simultaneously. This work does.
+  </p>
+</section>
+
+<section id="contact" class="card contact-block">
+  <div class="kicker">Contact</div>
+  <h2>Professional Inquiries</h2>
+  <p>Proposal, synopsis, and sample pages available upon request.</p>
+  <p><strong>Email:</strong> kennyabramowitz@aol.com</p>
+</section>
+
+<footer>
+  <div>© 2026 Kenny Abramowitz · All Rights Reserved</div>
+</footer>
+
+</div><div class="lb" id="lb" aria-hidden="true">
+  <figure>
+    <img src="" alt="" id="lb-img">
+    <figcaption id="lb-cap"></figcaption>
+  </figure>
+</div>
+
+<script>
+(function(){
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lb-img');
+  const lbCap = document.getElementById('lb-cap');
+
+  document.querySelectorAll('.imgbox img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      const cap = img.parentElement.querySelector('.caption');
+      lbCap.textContent = cap ? cap.textContent.trim() : '';
+      lb.style.display = 'flex';
+      lb.setAttribute('aria-hidden','false');
+    });
+  });
+
+  lb.addEventListener('click', () => {
+    lb.style.display = 'none';
+    lb.setAttribute('aria-hidden','true');
+    lbImg.src = '';
+  });
+
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape'){ lb.style.display = 'none'; lbImg.src = ''; }
+  });
+})();
+</script>
+
+</body>
+</html>
